@@ -1,0 +1,43 @@
+1. First you need to create a user by going to thunderclient
+
+POST http://localhost:8080/api/users/register
+
+Pass below in JSON:
+
+{
+  "username": "MArk",
+  "email":"mark@mail.com",
+  "password":"123456"
+}
+
+Then in return you will get it's id and email.
+
+
+2. Then login by going to 
+
+POST http://localhost:8080/api/login
+
+and pass below details in JSON
+
+{
+  "email":"mark@mail.com",
+  "password":"123456"
+}
+
+In return you will get an access token which now you can use to access "contact" private routes.
+
+3. Now you can go to
+
+POST http://localhost:8080/api/contacts
+
+and create a new contact as "MArk" logged in.
+
+PAss below in JSON:
+
+{
+  "name":"Billal",
+  "email":"Billal@mail.com",
+  "phone":"789675854"
+}
+
+Now above contact can be only accessed by Mark
